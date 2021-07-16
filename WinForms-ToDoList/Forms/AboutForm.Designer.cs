@@ -35,15 +35,15 @@ namespace WinForms_ToDoList.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.linkLabelGitHub = new System.Windows.Forms.LinkLabel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.PictureBoxEmail = new System.Windows.Forms.PictureBox();
+            this.PictureBoxGitHub = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxEmail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGitHub)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -112,24 +112,6 @@ namespace WinForms_ToDoList.Forms
             this.linkLabelGitHub.TabStop = true;
             this.linkLabelGitHub.Text = "Cyclist-code";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(7, 242);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox2.TabIndex = 38;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(7, 211);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.TabIndex = 37;
-            this.pictureBox1.TabStop = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -178,6 +160,22 @@ namespace WinForms_ToDoList.Forms
             this.label7.TabIndex = 43;
             this.label7.Text = "0.2.1607";
             // 
+            // PictureBoxEmail
+            // 
+            this.PictureBoxEmail.Location = new System.Drawing.Point(7, 242);
+            this.PictureBoxEmail.Name = "PictureBoxEmail";
+            this.PictureBoxEmail.Size = new System.Drawing.Size(25, 25);
+            this.PictureBoxEmail.TabIndex = 38;
+            this.PictureBoxEmail.TabStop = false;
+            // 
+            // PictureBoxGitHub
+            // 
+            this.PictureBoxGitHub.Location = new System.Drawing.Point(7, 211);
+            this.PictureBoxGitHub.Name = "PictureBoxGitHub";
+            this.PictureBoxGitHub.Size = new System.Drawing.Size(25, 25);
+            this.PictureBoxGitHub.TabIndex = 37;
+            this.PictureBoxGitHub.TabStop = false;
+            // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,8 +186,8 @@ namespace WinForms_ToDoList.Forms
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.linkLabelGitHub);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.PictureBoxEmail);
+            this.Controls.Add(this.PictureBoxGitHub);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -203,8 +201,8 @@ namespace WinForms_ToDoList.Forms
             this.Name = "AboutForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "О приложении";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxEmail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGitHub)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -218,8 +216,8 @@ namespace WinForms_ToDoList.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.LinkLabel linkLabelGitHub;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox PictureBoxEmail;
+        private System.Windows.Forms.PictureBox PictureBoxGitHub;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;

@@ -22,6 +22,9 @@ namespace WinForms_ToDoList.Forms
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Green500, Primary.Green700, Primary.Green100, Accent.Green700, TextShade.WHITE);
+
+            PictureBoxGitHub.Image = Properties.Resources.github;
+            PictureBoxEmail.Image = Properties.Resources.email;
         }
     }
 }
