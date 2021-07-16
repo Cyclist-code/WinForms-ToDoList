@@ -30,13 +30,28 @@ namespace WinForms_ToDoList
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.AboutProgramButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
+            // 
+            // AboutProgramButton
+            // 
+            this.AboutProgramButton.Depth = 0;
+            this.AboutProgramButton.Location = new System.Drawing.Point(663, 27);
+            this.AboutProgramButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.AboutProgramButton.Name = "AboutProgramButton";
+            this.AboutProgramButton.Primary = true;
+            this.AboutProgramButton.Size = new System.Drawing.Size(75, 35);
+            this.AboutProgramButton.TabIndex = 0;
+            this.AboutProgramButton.Text = "Справка";
+            this.AboutProgramButton.UseVisualStyleBackColor = true;
+            this.AboutProgramButton.Click += new System.EventHandler(this.AboutProgramButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 550);
+            this.Controls.Add(this.AboutProgramButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(750, 550);
@@ -49,6 +64,8 @@ namespace WinForms_ToDoList
         }
 
         #endregion
+
+        private MaterialSkin.Controls.MaterialRaisedButton AboutProgramButton;
     }
 }
 

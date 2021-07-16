@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using WinForms_ToDoList.Forms;
 
 namespace WinForms_ToDoList
 {
@@ -23,5 +24,13 @@ namespace WinForms_ToDoList
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Green500, Primary.Green700, Primary.Green100, Accent.Green700, TextShade.WHITE);
         }
+
+        #region Открытие ифнормации о приложении
+        private void AboutProgramButton_Click(object sender, EventArgs e)
+        {
+            AboutForm aboutForm = new AboutForm();
+            aboutForm.ShowDialog();
+        }
+        #endregion
     }
 }
