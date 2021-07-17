@@ -20,14 +20,14 @@ namespace WinForms_ToDoList.Forms
         #region Выход из приложения
         private void ExitAppButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult = DialogResult.OK;
         }
         #endregion
 
         #region Отмена выхода из приложения
         private void CancelExitAppButton_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult = DialogResult.Cancel;
         }
         #endregion
     }

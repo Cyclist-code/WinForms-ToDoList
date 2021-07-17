@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -30,7 +23,7 @@ namespace WinForms_ToDoList
         AboutForm aboutForm;
         #endregion
 
-        #region Открытие ифнормации о приложении с проверкой
+        #region Открытие окна с ифнормации о приложении с дополнительной проверкой
         private void AboutProgramButton_Click(object sender, EventArgs e)
         {
             foreach(Form form in Application.OpenForms)
@@ -45,6 +38,19 @@ namespace WinForms_ToDoList
                 aboutForm = new AboutForm();
                 aboutForm.Show();
             }
+        }
+        #endregion
+
+        #region Подтверждение закрытия приложения
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MessageExitForm exitForm = new MessageExitForm();
+            exitForm.ShowDialog();
+
+            if (exitForm.DialogResult == DialogResult.OK)
+                e.Cancel = false;
+            else
+                e.Cancel = true;
         }
         #endregion
     }
