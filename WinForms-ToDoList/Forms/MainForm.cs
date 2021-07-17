@@ -25,11 +25,26 @@ namespace WinForms_ToDoList
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Green500, Primary.Green700, Primary.Green100, Accent.Green700, TextShade.WHITE);
         }
 
-        #region Открытие ифнормации о приложении
+        #region Переменные
+        int openForm = 0;
+        AboutForm aboutForm;
+        #endregion
+
+        #region Открытие ифнормации о приложении с проверкой
         private void AboutProgramButton_Click(object sender, EventArgs e)
         {
-            AboutForm aboutForm = new AboutForm();
-            aboutForm.ShowDialog();
+            foreach(Form form in Application.OpenForms)
+            {
+                if (form.Name == "AboutForm")
+                    openForm = 1;
+                else
+                    openForm = 0;
+            }
+            if (openForm == 0)
+            {
+                aboutForm = new AboutForm();
+                aboutForm.Show();
+            }
         }
         #endregion
     }
