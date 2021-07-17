@@ -111,6 +111,7 @@ namespace WinForms_ToDoList.Forms
             this.linkLabelGitHub.TabIndex = 39;
             this.linkLabelGitHub.TabStop = true;
             this.linkLabelGitHub.Text = "Cyclist-code";
+            this.linkLabelGitHub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelGitHub_LinkClicked);
             // 
             // label5
             // 
@@ -158,7 +159,7 @@ namespace WinForms_ToDoList.Forms
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 18);
             this.label7.TabIndex = 43;
-            this.label7.Text = "0.2.1607";
+            this.label7.Text = "0.2.0721";
             // 
             // PictureBoxEmail
             // 
@@ -178,8 +179,7 @@ namespace WinForms_ToDoList.Forms
             // 
             // AboutForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(350, 350);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -195,10 +195,9 @@ namespace WinForms_ToDoList.Forms
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(350, 350);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(350, 350);
             this.Name = "AboutForm";
+            this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "О приложении";
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxEmail)).EndInit();
