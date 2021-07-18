@@ -106,9 +106,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\email.png" />
-    <Content Include="Assets\github.png" />
     <Content Include="Assets\icon_app.ico" />
+    <Content Include="Assets\to_do_list.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

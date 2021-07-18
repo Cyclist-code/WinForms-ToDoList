@@ -33,18 +33,20 @@ namespace WinForms_ToDoList.Forms
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.ProfileGitHubButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.CopyEmailButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // materialLabel2
             // 
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(31, 209);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(143, 57);
+            this.materialLabel2.Size = new System.Drawing.Size(139, 54);
             this.materialLabel2.TabIndex = 45;
             this.materialLabel2.Text = "ToDoList App\r\nАвтор: Cyclist-code\r\nВерсия: 0.4.0721";
             this.materialLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -75,10 +77,21 @@ namespace WinForms_ToDoList.Forms
             this.CopyEmailButton.UseVisualStyleBackColor = true;
             this.CopyEmailButton.Click += new System.EventHandler(this.CopyEmailButton_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WinForms_ToDoList.Properties.Resources.to_do_list;
+            this.pictureBox1.Location = new System.Drawing.Point(42, 76);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 120);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 49;
+            this.pictureBox1.TabStop = false;
+            // 
             // AboutForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(205, 335);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.CopyEmailButton);
             this.Controls.Add(this.ProfileGitHubButton);
             this.Controls.Add(this.materialLabel2);
@@ -89,6 +102,7 @@ namespace WinForms_ToDoList.Forms
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "О приложении";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,5 +112,6 @@ namespace WinForms_ToDoList.Forms
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialRaisedButton ProfileGitHubButton;
         private MaterialSkin.Controls.MaterialRaisedButton CopyEmailButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

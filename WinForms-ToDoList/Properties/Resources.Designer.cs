@@ -63,19 +63,9 @@ namespace WinForms_ToDoList.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap email {
+        internal static System.Drawing.Bitmap to_do_list {
             get {
-                object obj = ResourceManager.GetObject("email", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap github {
-            get {
-                object obj = ResourceManager.GetObject("github", resourceCulture);
+                object obj = ResourceManager.GetObject("to_do_list", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
