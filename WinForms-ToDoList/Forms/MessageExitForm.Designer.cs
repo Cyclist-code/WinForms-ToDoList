@@ -30,20 +30,10 @@ namespace WinForms_ToDoList.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessageExitForm));
-            this.label1 = new System.Windows.Forms.Label();
             this.ExitAppButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.CancelExitAppButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(12, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(351, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Вы действительно хотите выйти из приложения?";
             // 
             // ExitAppButton
             // 
@@ -71,13 +61,26 @@ namespace WinForms_ToDoList.Forms
             this.CancelExitAppButton.UseVisualStyleBackColor = true;
             this.CancelExitAppButton.Click += new System.EventHandler(this.CancelExitAppButton_Click);
             // 
+            // materialLabel1
+            // 
+            this.materialLabel1.AutoSize = true;
+            this.materialLabel1.Depth = 0;
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel1.Location = new System.Drawing.Point(3, 81);
+            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel1.Name = "materialLabel1";
+            this.materialLabel1.Size = new System.Drawing.Size(365, 19);
+            this.materialLabel1.TabIndex = 3;
+            this.materialLabel1.Text = "Вы действительно хотите выйти из приложения?";
+            // 
             // MessageExitForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(370, 160);
+            this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.CancelExitAppButton);
             this.Controls.Add(this.ExitAppButton);
-            this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -91,9 +94,8 @@ namespace WinForms_ToDoList.Forms
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private MaterialSkin.Controls.MaterialRaisedButton ExitAppButton;
         private MaterialSkin.Controls.MaterialRaisedButton CancelExitAppButton;
+        private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }
 }
