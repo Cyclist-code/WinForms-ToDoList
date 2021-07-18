@@ -61,13 +61,15 @@ namespace WinForms_ToDoList.Forms
             // 
             // MessageForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(370, 160);
             this.Controls.Add(this.MessageLabel);
             this.Controls.Add(this.CloseButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MessageForm";
+            this.Sizable = false;
             this.ResumeLayout(false);
             this.PerformLayout();
 

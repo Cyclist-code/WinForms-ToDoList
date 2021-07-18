@@ -9,11 +9,13 @@ namespace WinForms_ToDoList.Forms
     {
         private readonly MaterialSkinManager skinManager = null;
 
-        public MessageForm()
+        public MessageForm(string message)
         {
             InitializeComponent();
 
             MainForm.ThemeSelect(skinManager, this);
+
+            MessageLabel.Text = message;
         }
 
         #region Закрытие окна сообщения
