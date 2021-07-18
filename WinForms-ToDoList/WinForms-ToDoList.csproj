@@ -70,6 +70,12 @@
     <Compile Include="Forms\MessageExitForm.Designer.cs">
       <DependentUpon>MessageExitForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AboutForm.resx">
@@ -80,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MessageExitForm.resx">
       <DependentUpon>MessageExitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
