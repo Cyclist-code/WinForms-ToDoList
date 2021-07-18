@@ -8,27 +8,55 @@ namespace WinForms_ToDoList
 {
     public partial class MainForm : MaterialForm
     {
+        #region Глобальные переменные
+        private readonly MaterialSkinManager skinManager = null;
+        public static bool themeSelected = false;
+
+        int openForm = 0;
+        AboutForm aboutForm;
+        #endregion
+
         public MainForm()
         {
             InitializeComponent();
 
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-            materialSkinManager.ColorScheme = new ColorScheme(Primary.Green500, Primary.Green700, Primary.Green100, Accent.Green700, TextShade.WHITE);
+            ThemeSelect(skinManager, this);
 
             DeadLineToDoLabel.Text = DateTime.Now.ToShortDateString();
         }
 
-        #region Переменные
-        int openForm = 0;
-        AboutForm aboutForm;
+        #region Метод выбора темы офрмления
+        public static void ThemeSelect(MaterialSkinManager skinManager, MaterialForm form)
+        {
+            if (themeSelected == true)
+            {
+                skinManager = MaterialSkinManager.Instance;
+                skinManager.AddFormToManage(form);
+                skinManager.Theme = MaterialSkinManager.Themes.DARK;
+                skinManager.ColorScheme = new ColorScheme(Primary.Blue500, Primary.Blue700, Primary.Blue100, Accent.Blue400, TextShade.WHITE);
+            }
+            else
+            {
+                skinManager = MaterialSkinManager.Instance;
+                skinManager.AddFormToManage(form);
+                skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+                skinManager.ColorScheme = new ColorScheme(Primary.Green500, Primary.Green700, Primary.Green100, Accent.Green700, TextShade.WHITE);
+            }
+        }
+        #endregion
+
+        #region Выбор темы офрмления при установки галочки
+        private void DarkThemeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            themeSelected = DarkThemeCheckBox.Checked;
+            ThemeSelect(skinManager, this);
+        }
         #endregion
 
         #region Открытие окна с ифнормации о приложении с дополнительной проверкой
         private void AboutProgramButton_Click(object sender, EventArgs e)
         {
-            foreach(Form form in Application.OpenForms)
+            foreach (Form form in Application.OpenForms)
             {
                 if (form.Name == "AboutForm")
                     openForm = 1;
@@ -63,5 +91,6 @@ namespace WinForms_ToDoList
             DeadLineToDoLabel.Text = e.Start.ToShortDateString();
         }
         #endregion
+       
     }
 }

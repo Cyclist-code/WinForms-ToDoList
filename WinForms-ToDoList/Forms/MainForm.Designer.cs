@@ -200,6 +200,7 @@ namespace WinForms_ToDoList
             this.DarkThemeCheckBox.TabIndex = 10;
             this.DarkThemeCheckBox.Text = "Тёмная тема";
             this.DarkThemeCheckBox.UseVisualStyleBackColor = true;
+            this.DarkThemeCheckBox.CheckedChanged += new System.EventHandler(this.DarkThemeCheckBox_CheckedChanged);
             // 
             // MainForm
             // 
