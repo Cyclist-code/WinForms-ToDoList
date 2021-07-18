@@ -39,11 +39,11 @@ namespace WinForms_ToDoList
             this.MonthCalendar = new System.Windows.Forms.MonthCalendar();
             this.AddDataButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.ToDoDGV = new System.Windows.Forms.DataGridView();
-            this.DeadLineToDoLabel = new MaterialSkin.Controls.MaterialLabel();
-            this.DarkThemeCheckBox = new MaterialSkin.Controls.MaterialCheckBox();
             this.DateCompletionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToDoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.DeadLineToDoLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.DarkThemeCheckBox = new MaterialSkin.Controls.MaterialCheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.ToDoDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,6 +131,7 @@ namespace WinForms_ToDoList
             this.MonthCalendar.Location = new System.Drawing.Point(8, 187);
             this.MonthCalendar.Name = "MonthCalendar";
             this.MonthCalendar.TabIndex = 6;
+            this.MonthCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.MonthCalendar_DateChanged);
             // 
             // AddDataButton
             // 
@@ -156,34 +157,6 @@ namespace WinForms_ToDoList
             this.ToDoDGV.Size = new System.Drawing.Size(505, 270);
             this.ToDoDGV.TabIndex = 8;
             // 
-            // DeadLineToDoLabel
-            // 
-            this.DeadLineToDoLabel.AutoSize = true;
-            this.DeadLineToDoLabel.Depth = 0;
-            this.DeadLineToDoLabel.Font = new System.Drawing.Font("Roboto", 11F);
-            this.DeadLineToDoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.DeadLineToDoLabel.Location = new System.Drawing.Point(8, 162);
-            this.DeadLineToDoLabel.MouseState = MaterialSkin.MouseState.HOVER;
-            this.DeadLineToDoLabel.Name = "DeadLineToDoLabel";
-            this.DeadLineToDoLabel.Size = new System.Drawing.Size(81, 19);
-            this.DeadLineToDoLabel.TabIndex = 9;
-            this.DeadLineToDoLabel.Text = "17.07.2021";
-            // 
-            // DarkThemeCheckBox
-            // 
-            this.DarkThemeCheckBox.Depth = 0;
-            this.DarkThemeCheckBox.Font = new System.Drawing.Font("Roboto", 10F);
-            this.DarkThemeCheckBox.Location = new System.Drawing.Point(8, 361);
-            this.DarkThemeCheckBox.Margin = new System.Windows.Forms.Padding(0);
-            this.DarkThemeCheckBox.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.DarkThemeCheckBox.MouseState = MaterialSkin.MouseState.HOVER;
-            this.DarkThemeCheckBox.Name = "DarkThemeCheckBox";
-            this.DarkThemeCheckBox.Ripple = true;
-            this.DarkThemeCheckBox.Size = new System.Drawing.Size(140, 30);
-            this.DarkThemeCheckBox.TabIndex = 10;
-            this.DarkThemeCheckBox.Text = "Тёмная тема";
-            this.DarkThemeCheckBox.UseVisualStyleBackColor = true;
-            // 
             // DateCompletionColumn
             // 
             this.DateCompletionColumn.HeaderText = "Дата выполнения";
@@ -200,6 +173,33 @@ namespace WinForms_ToDoList
             // 
             this.StatusColumn.HeaderText = "Статус";
             this.StatusColumn.Name = "StatusColumn";
+            // 
+            // DeadLineToDoLabel
+            // 
+            this.DeadLineToDoLabel.AutoSize = true;
+            this.DeadLineToDoLabel.Depth = 0;
+            this.DeadLineToDoLabel.Font = new System.Drawing.Font("Roboto", 11F);
+            this.DeadLineToDoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.DeadLineToDoLabel.Location = new System.Drawing.Point(8, 162);
+            this.DeadLineToDoLabel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.DeadLineToDoLabel.Name = "DeadLineToDoLabel";
+            this.DeadLineToDoLabel.Size = new System.Drawing.Size(0, 19);
+            this.DeadLineToDoLabel.TabIndex = 9;
+            // 
+            // DarkThemeCheckBox
+            // 
+            this.DarkThemeCheckBox.Depth = 0;
+            this.DarkThemeCheckBox.Font = new System.Drawing.Font("Roboto", 10F);
+            this.DarkThemeCheckBox.Location = new System.Drawing.Point(8, 361);
+            this.DarkThemeCheckBox.Margin = new System.Windows.Forms.Padding(0);
+            this.DarkThemeCheckBox.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.DarkThemeCheckBox.MouseState = MaterialSkin.MouseState.HOVER;
+            this.DarkThemeCheckBox.Name = "DarkThemeCheckBox";
+            this.DarkThemeCheckBox.Ripple = true;
+            this.DarkThemeCheckBox.Size = new System.Drawing.Size(140, 30);
+            this.DarkThemeCheckBox.TabIndex = 10;
+            this.DarkThemeCheckBox.Text = "Тёмная тема";
+            this.DarkThemeCheckBox.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 

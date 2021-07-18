@@ -16,6 +16,8 @@ namespace WinForms_ToDoList
             materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Green500, Primary.Green700, Primary.Green100, Accent.Green700, TextShade.WHITE);
+
+            DeadLineToDoLabel.Text = DateTime.Now.ToShortDateString();
         }
 
         #region Переменные
@@ -51,6 +53,14 @@ namespace WinForms_ToDoList
                 e.Cancel = false;
             else
                 e.Cancel = true;
+        }
+        #endregion
+
+        #region Выбор даты выполнения
+        private void MonthCalendar_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            DeadLineToDoLabel.Text = "";
+            DeadLineToDoLabel.Text = e.Start.ToShortDateString();
         }
         #endregion
     }
