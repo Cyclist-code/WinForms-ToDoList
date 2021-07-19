@@ -33,12 +33,14 @@ namespace WinForms_ToDoList.Forms
             this.ExitAppButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.CancelExitAppButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // ExitAppButton
             // 
             this.ExitAppButton.Depth = 0;
-            this.ExitAppButton.Location = new System.Drawing.Point(212, 120);
+            this.ExitAppButton.Location = new System.Drawing.Point(192, 120);
             this.ExitAppButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ExitAppButton.Name = "ExitAppButton";
             this.ExitAppButton.Primary = true;
@@ -51,7 +53,7 @@ namespace WinForms_ToDoList.Forms
             // CancelExitAppButton
             // 
             this.CancelExitAppButton.Depth = 0;
-            this.CancelExitAppButton.Location = new System.Drawing.Point(288, 120);
+            this.CancelExitAppButton.Location = new System.Drawing.Point(268, 120);
             this.CancelExitAppButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.CancelExitAppButton.Name = "CancelExitAppButton";
             this.CancelExitAppButton.Primary = true;
@@ -63,21 +65,31 @@ namespace WinForms_ToDoList.Forms
             // 
             // materialLabel1
             // 
-            this.materialLabel1.AutoSize = true;
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(3, 81);
+            this.materialLabel1.Location = new System.Drawing.Point(68, 74);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(365, 19);
-            this.materialLabel1.TabIndex = 3;
+            this.materialLabel1.Size = new System.Drawing.Size(282, 40);
+            this.materialLabel1.TabIndex = 4;
             this.materialLabel1.Text = "Вы действительно хотите выйти из приложения?";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WinForms_ToDoList.Properties.Resources.info;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 74);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // MessageExitForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(370, 160);
+            this.ClientSize = new System.Drawing.Size(350, 160);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.CancelExitAppButton);
             this.Controls.Add(this.ExitAppButton);
@@ -88,8 +100,8 @@ namespace WinForms_ToDoList.Forms
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Выход из приложения";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -97,5 +109,6 @@ namespace WinForms_ToDoList.Forms
         private MaterialSkin.Controls.MaterialRaisedButton ExitAppButton;
         private MaterialSkin.Controls.MaterialRaisedButton CancelExitAppButton;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
