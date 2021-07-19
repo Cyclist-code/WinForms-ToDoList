@@ -32,6 +32,8 @@ namespace WinForms_ToDoList.Forms
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MessageForm));
             this.CloseButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.MessageLabel = new MaterialSkin.Controls.MaterialLabel();
+            this.PictureBoxIcon = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // CloseButton
@@ -49,20 +51,29 @@ namespace WinForms_ToDoList.Forms
             // 
             // MessageLabel
             // 
-            this.MessageLabel.AutoSize = true;
             this.MessageLabel.Depth = 0;
             this.MessageLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.MessageLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.MessageLabel.Location = new System.Drawing.Point(3, 81);
+            this.MessageLabel.Location = new System.Drawing.Point(68, 74);
             this.MessageLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.MessageLabel.Name = "MessageLabel";
-            this.MessageLabel.Size = new System.Drawing.Size(0, 19);
-            this.MessageLabel.TabIndex = 4;
+            this.MessageLabel.Size = new System.Drawing.Size(302, 40);
+            this.MessageLabel.TabIndex = 5;
+            // 
+            // PictureBoxIcon
+            // 
+            this.PictureBoxIcon.Location = new System.Drawing.Point(12, 74);
+            this.PictureBoxIcon.Name = "PictureBoxIcon";
+            this.PictureBoxIcon.Size = new System.Drawing.Size(40, 40);
+            this.PictureBoxIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxIcon.TabIndex = 6;
+            this.PictureBoxIcon.TabStop = false;
             // 
             // MessageForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(370, 160);
+            this.Controls.Add(this.PictureBoxIcon);
             this.Controls.Add(this.MessageLabel);
             this.Controls.Add(this.CloseButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -70,8 +81,8 @@ namespace WinForms_ToDoList.Forms
             this.MinimizeBox = false;
             this.Name = "MessageForm";
             this.Sizable = false;
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxIcon)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -79,5 +90,6 @@ namespace WinForms_ToDoList.Forms
 
         private MaterialSkin.Controls.MaterialRaisedButton CloseButton;
         private MaterialSkin.Controls.MaterialLabel MessageLabel;
+        private System.Windows.Forms.PictureBox PictureBoxIcon;
     }
 }

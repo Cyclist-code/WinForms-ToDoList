@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Windows.Forms;
+using System.Drawing;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -9,7 +9,7 @@ namespace WinForms_ToDoList.Forms
     {
         private readonly MaterialSkinManager skinManager = null;
 
-        public MessageForm(string message, string caption)
+        public MessageForm(string message, string caption, Image image)
         {
             InitializeComponent();
 
@@ -17,6 +17,7 @@ namespace WinForms_ToDoList.Forms
 
             MessageLabel.Text = message;
             this.Text = caption;
+            PictureBoxIcon.Image = image;
         }
 
         #region Закрытие окна сообщения
