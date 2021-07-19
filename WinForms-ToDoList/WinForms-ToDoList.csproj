@@ -115,8 +115,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\error.png" />
     <Content Include="Assets\icon_app.ico" />
+    <Content Include="Assets\info.png" />
     <Content Include="Assets\to_do_list.png" />
+    <Content Include="Assets\warning.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
