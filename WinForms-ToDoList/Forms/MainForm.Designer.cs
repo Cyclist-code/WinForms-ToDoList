@@ -39,11 +39,11 @@ namespace WinForms_ToDoList
             this.MonthCalendar = new System.Windows.Forms.MonthCalendar();
             this.AddDataButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.ToDoDGV = new System.Windows.Forms.DataGridView();
-            this.DateCompletionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ToDoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.StatusColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.DeadLineToDoLabel = new MaterialSkin.Controls.MaterialLabel();
             this.DarkThemeCheckBox = new MaterialSkin.Controls.MaterialCheckBox();
+            this.DateCompletionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ToDoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DoneColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ToDoDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,28 +151,11 @@ namespace WinForms_ToDoList
             this.ToDoDGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DateCompletionColumn,
             this.ToDoColumn,
-            this.StatusColumn});
+            this.DoneColumn});
             this.ToDoDGV.Location = new System.Drawing.Point(184, 79);
             this.ToDoDGV.Name = "ToDoDGV";
             this.ToDoDGV.Size = new System.Drawing.Size(505, 270);
             this.ToDoDGV.TabIndex = 8;
-            // 
-            // DateCompletionColumn
-            // 
-            this.DateCompletionColumn.HeaderText = "Дата выполнения";
-            this.DateCompletionColumn.Name = "DateCompletionColumn";
-            this.DateCompletionColumn.Width = 140;
-            // 
-            // ToDoColumn
-            // 
-            this.ToDoColumn.HeaderText = "Сделать";
-            this.ToDoColumn.Name = "ToDoColumn";
-            this.ToDoColumn.Width = 222;
-            // 
-            // StatusColumn
-            // 
-            this.StatusColumn.HeaderText = "Статус";
-            this.StatusColumn.Name = "StatusColumn";
             // 
             // DeadLineToDoLabel
             // 
@@ -201,6 +184,24 @@ namespace WinForms_ToDoList
             this.DarkThemeCheckBox.Text = "Тёмная тема";
             this.DarkThemeCheckBox.UseVisualStyleBackColor = true;
             this.DarkThemeCheckBox.CheckedChanged += new System.EventHandler(this.DarkThemeCheckBox_CheckedChanged);
+            // 
+            // DateCompletionColumn
+            // 
+            this.DateCompletionColumn.HeaderText = "Дата выполнения";
+            this.DateCompletionColumn.Name = "DateCompletionColumn";
+            this.DateCompletionColumn.Width = 140;
+            // 
+            // ToDoColumn
+            // 
+            this.ToDoColumn.HeaderText = "Сделать";
+            this.ToDoColumn.Name = "ToDoColumn";
+            this.ToDoColumn.Width = 222;
+            // 
+            // DoneColumn
+            // 
+            this.DoneColumn.HeaderText = "Выполнено";
+            this.DoneColumn.Name = "DoneColumn";
+            this.DoneColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // MainForm
             // 
@@ -245,7 +246,7 @@ namespace WinForms_ToDoList
         private MaterialSkin.Controls.MaterialCheckBox DarkThemeCheckBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateCompletionColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ToDoColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn StatusColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn DoneColumn;
     }
 }
 
