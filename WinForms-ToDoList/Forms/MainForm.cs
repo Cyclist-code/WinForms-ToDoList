@@ -9,9 +9,7 @@ namespace WinForms_ToDoList
     public partial class MainForm : MaterialForm
     {
         #region Глобальные переменные
-        private readonly MaterialSkinManager skinManager = null;
-        public static bool themeSelected = false;
-
+        string theme;
         int openForm = 0;
         AboutForm aboutForm;
         #endregion
@@ -20,36 +18,47 @@ namespace WinForms_ToDoList
         {
             InitializeComponent();
 
-            ThemeSelect(skinManager, this);
+            #region Дефолтная тема
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            theme = Properties.Settings.Default.DarkTheme;
+            if ((theme == "") || (theme == " ") || (theme == "0"))
+            {
+                materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+                materialSkinManager.ColorScheme = new ColorScheme(Primary.Green500, Primary.Green700, Primary.Green100, Accent.Green700, TextShade.WHITE);
+            }
+            if (theme == "1")
+            {
+                DarkThemeCheckBox.Checked = true;
+                materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+                materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue500, Primary.Blue700, Primary.Blue100, Accent.Blue400, TextShade.WHITE);
+            }
+            #endregion
 
             DeadLineToDoLabel.Text = DateTime.Now.ToShortDateString();
-        }
-
-        #region Метод выбора темы офрмления
-        public static void ThemeSelect(MaterialSkinManager skinManager, MaterialForm form)
-        {
-            if (themeSelected == true)
-            {
-                skinManager = MaterialSkinManager.Instance;
-                skinManager.AddFormToManage(form);
-                skinManager.Theme = MaterialSkinManager.Themes.DARK;
-                skinManager.ColorScheme = new ColorScheme(Primary.Blue500, Primary.Blue700, Primary.Blue100, Accent.Blue400, TextShade.WHITE);
-            }
-            else
-            {
-                skinManager = MaterialSkinManager.Instance;
-                skinManager.AddFormToManage(form);
-                skinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-                skinManager.ColorScheme = new ColorScheme(Primary.Green500, Primary.Green700, Primary.Green100, Accent.Green700, TextShade.WHITE);
-            }
-        }
-        #endregion
+        }       
 
         #region Выбор темы офрмления при установки галочки
         private void DarkThemeCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            themeSelected = DarkThemeCheckBox.Checked;
-            ThemeSelect(skinManager, this);
+            if (DarkThemeCheckBox.Checked)
+            {
+                //Включение тёмной темы
+                var materialSkinManager = MaterialSkinManager.Instance;
+                materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+                materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue500, Primary.Blue700, Primary.Blue100, Accent.Blue400, TextShade.WHITE);
+                Properties.Settings.Default.DarkTheme = "1";
+                Properties.Settings.Default.Save();
+            }
+            if (!DarkThemeCheckBox.Checked)
+            {
+                //Включение дефолтной темы
+                var materialSkinManager = MaterialSkinManager.Instance;
+                materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+                materialSkinManager.ColorScheme = new ColorScheme(Primary.Green500, Primary.Green700, Primary.Green100, Accent.Green700, TextShade.WHITE);
+                Properties.Settings.Default.DarkTheme = "0";
+                Properties.Settings.Default.Save();
+            }
         }
         #endregion
 
@@ -91,6 +100,6 @@ namespace WinForms_ToDoList
             DeadLineToDoLabel.Text = e.Start.ToShortDateString();
         }
         #endregion
-       
+
     }
 }

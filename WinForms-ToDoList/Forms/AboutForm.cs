@@ -8,13 +8,12 @@ namespace WinForms_ToDoList.Forms
 {
     public partial class AboutForm : MaterialForm
     {
-        private readonly MaterialSkinManager skinManager = null;
-
         public AboutForm()
         {
             InitializeComponent();
 
-            MainForm.ThemeSelect(skinManager, this);
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
         }
 
         #region Переход в профиль на GitHub

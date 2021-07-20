@@ -7,13 +7,12 @@ namespace WinForms_ToDoList.Forms
 {
     public partial class MessageForm : MaterialForm
     {
-        private readonly MaterialSkinManager skinManager = null;
-
         public MessageForm(string message, string caption, Image image)
         {
             InitializeComponent();
 
-            MainForm.ThemeSelect(skinManager, this);
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
 
             MessageLabel.Text = message;
             this.Text = caption;

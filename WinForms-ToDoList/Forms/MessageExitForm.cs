@@ -7,13 +7,12 @@ namespace WinForms_ToDoList.Forms
 {
     public partial class MessageExitForm : MaterialForm
     {
-        private readonly MaterialSkinManager skinManager = null;
-
         public MessageExitForm()
         {
             InitializeComponent();
 
-            MainForm.ThemeSelect(skinManager, this);
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
         }
 
         #region Выход из приложения
