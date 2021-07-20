@@ -9,3 +9,8 @@ Windows.
 - .NET Framework 4.8;
 - База данных SQLite;
 - Билиотека для дизайна MaterialSkin;
+# Документация
+Ссылка на документацию приложения.
+# Используемые библиотеки
+- [MaterialSkin](https://github.com/IgnaceMaes/MaterialSkin)
+# Изображения
