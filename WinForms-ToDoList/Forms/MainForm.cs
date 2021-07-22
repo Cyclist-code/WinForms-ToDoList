@@ -15,6 +15,7 @@ namespace WinForms_ToDoList
         string theme;
         int openForm = 0;
         AboutForm aboutForm;
+
         SQLiteConnection connection = new SQLiteConnection(DbConnection.dbConnection);
         #endregion
 
@@ -113,5 +114,17 @@ namespace WinForms_ToDoList
             connection.Close();
         }
         #endregion
+
+        #region Обработчики событий
+
+        #region Добавление новых данных
+        private void AddDataButton_Click(object sender, EventArgs e)
+        {
+            DbController.AddNewData(DeadLineToDoLabel, ToDoText, ToDoDataGridView);
+        }
+        #endregion
+
+        #endregion
+
     }
 }

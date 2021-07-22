@@ -148,6 +148,7 @@ namespace WinForms_ToDoList
             this.AddDataButton.TabIndex = 7;
             this.AddDataButton.Text = "Добавить";
             this.AddDataButton.UseVisualStyleBackColor = true;
+            this.AddDataButton.Click += new System.EventHandler(this.AddDataButton_Click);
             // 
             // ToDoDataGridView
             // 
