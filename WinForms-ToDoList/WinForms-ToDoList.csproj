@@ -71,7 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\DatabaseController.cs" />
+    <Compile Include="Database\DbController.cs" />
     <Compile Include="Database\DbConnection.cs" />
     <Compile Include="Forms\AboutForm.cs">
       <SubType>Form</SubType>
