@@ -75,6 +75,7 @@ namespace WinForms_ToDoList
             this.ExportDataButton.TabIndex = 1;
             this.ExportDataButton.Text = "Экспорт";
             this.ExportDataButton.UseVisualStyleBackColor = true;
+            this.ExportDataButton.Click += new System.EventHandler(this.ExportDataButton_Click);
             // 
             // DeleteDataButton
             // 

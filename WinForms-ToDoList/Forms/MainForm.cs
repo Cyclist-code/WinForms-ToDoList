@@ -124,7 +124,13 @@ namespace WinForms_ToDoList
         }
         #endregion
 
+        #region Эспорт данных
+        private void ExportDataButton_Click(object sender, EventArgs e)
+        {
+            DbController.ExportDataExcel(ToDoDataGridView);
+        }
         #endregion
 
+        #endregion
     }
 }
