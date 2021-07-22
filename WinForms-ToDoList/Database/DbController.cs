@@ -40,6 +40,14 @@ namespace WinForms_ToDoList.Database
         }
         #endregion
 
+        #region Добавление новой строки в DataGridView
+        public static void AddNewRow()
+        {
+            DataRow newRow = tableToDo.NewRow();
+            tableToDo.Rows.Add(newRow);
+        }
+        #endregion
+
         #region Добавление новых данных
         public static void AddNewData(MaterialLabel label, MaterialSingleLineTextField textField, DataGridView dataGridView)
         {
