@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Data.SQLite;
+using System.Data;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using WinForms_ToDoList.Forms;
+using WinForms_ToDoList.Database;
 
 namespace WinForms_ToDoList
 {
@@ -12,6 +15,7 @@ namespace WinForms_ToDoList
         string theme;
         int openForm = 0;
         AboutForm aboutForm;
+        SQLiteConnection connection = new SQLiteConnection(DbConnection.dbConnection);
         #endregion
 
         public MainForm()
@@ -101,5 +105,13 @@ namespace WinForms_ToDoList
         }
         #endregion
 
+        #region Загрузка данных
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            connection.Open();
+            DbController.LoadData(ToDoDataGridView);
+            connection.Close();
+        }
+        #endregion
     }
 }
