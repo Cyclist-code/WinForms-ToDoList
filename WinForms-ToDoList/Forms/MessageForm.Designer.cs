@@ -81,6 +81,7 @@ namespace WinForms_ToDoList.Forms
             this.MinimizeBox = false;
             this.Name = "MessageForm";
             this.Sizable = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxIcon)).EndInit();
             this.ResumeLayout(false);
 
