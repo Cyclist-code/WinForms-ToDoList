@@ -168,6 +168,7 @@ namespace WinForms_ToDoList
             this.ToDoDataGridView.Name = "ToDoDataGridView";
             this.ToDoDataGridView.Size = new System.Drawing.Size(510, 360);
             this.ToDoDataGridView.TabIndex = 8;
+            this.ToDoDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ToDoDataGridView_CellClick);
             // 
             // DeadLineToDoLabel
             // 

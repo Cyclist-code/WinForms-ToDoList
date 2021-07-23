@@ -137,10 +137,22 @@ namespace WinForms_ToDoList
         {
             DbController.ExportDataExcel(ToDoDataGridView);
         }
-        #endregion
 
         #endregion
 
-        
+        #endregion
+
+        #region Вывод сохранённых данных в поля
+        private void ToDoDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow row in ToDoDataGridView.SelectedRows)
+            {
+                DeadLineToDoLabel.Text = ToDoDataGridView.SelectedRows[0].Cells[1].Value.ToString();
+                ToDoText.Text = ToDoDataGridView.SelectedRows[0].Cells[2].Value.ToString();
+                DoneText.Text = ToDoDataGridView.SelectedRows[0].Cells[3].Value.ToString();
+            }
+        }
+        #endregion
+
     }
 }
