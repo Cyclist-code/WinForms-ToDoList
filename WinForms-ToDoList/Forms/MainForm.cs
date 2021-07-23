@@ -132,6 +132,13 @@ namespace WinForms_ToDoList
         }
         #endregion
 
+        #region Удаление данных
+        private void DeleteDataButton_Click(object sender, EventArgs e)
+        {
+            DbController.DeleteData(ToDoDataGridView, DeadLineToDoLabel, ToDoText, DoneText);
+        }
+        #endregion
+
         #region Эспорт данных
         private void ExportDataButton_Click(object sender, EventArgs e)
         {
@@ -154,5 +161,6 @@ namespace WinForms_ToDoList
         }
         #endregion
 
+        
     }
 }

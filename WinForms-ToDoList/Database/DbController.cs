@@ -98,7 +98,7 @@ namespace WinForms_ToDoList.Database
             {
                 if (dataGridView.CurrentRow.Cells[0].Value != DBNull.Value)
                 {
-                    string deleteData = "DELETE FROM ToDoList WHERE Id = '" + Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value) + "'";
+                    string deleteData = "DELETE FROM ToDoTable WHERE Id = '" + Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value) + "'";
                     command = new SQLiteCommand(deleteData, connection);
                     command.ExecuteNonQuery();
 

@@ -90,6 +90,7 @@ namespace WinForms_ToDoList
             this.DeleteDataButton.TabIndex = 2;
             this.DeleteDataButton.Text = "Удалить";
             this.DeleteDataButton.UseVisualStyleBackColor = true;
+            this.DeleteDataButton.Click += new System.EventHandler(this.DeleteDataButton_Click);
             // 
             // ToDoText
             // 
