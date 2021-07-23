@@ -10,7 +10,8 @@ Windows.
 - База данных SQLite;
 - Билиотека для дизайна MaterialSkin;
 ## Документация
-Ссылка на документацию приложения.
+[В документации приложения](https://github.com/IgnaceMaes/MaterialSkin) есть краткая информация о приложении, структура базы данных и руководство пользователя.
 ## Используемые библиотеки
 - [MaterialSkin](https://github.com/IgnaceMaes/MaterialSkin)
+- [System.Data.SQLite](https://www.nuget.org/packages/System.Data.SQLite)
 ## Изображения
