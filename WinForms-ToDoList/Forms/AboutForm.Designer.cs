@@ -41,14 +41,14 @@ namespace WinForms_ToDoList.Forms
             // 
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
-            this.materialLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel2.Location = new System.Drawing.Point(31, 209);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
-            this.materialLabel2.Size = new System.Drawing.Size(139, 54);
+            this.materialLabel2.Size = new System.Drawing.Size(143, 57);
             this.materialLabel2.TabIndex = 45;
-            this.materialLabel2.Text = "ToDoList App\r\nАвтор: Cyclist-code\r\nВерсия: 0.4.0721";
+            this.materialLabel2.Text = "ToDoList App\r\nАвтор: Cyclist-code\r\nВерсия: 1.0.0721";
             this.materialLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ProfileGitHubButton
