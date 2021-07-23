@@ -41,6 +41,7 @@ namespace WinForms_ToDoList
             #endregion
 
             DeadLineToDoLabel.Text = DateTime.Now.ToShortDateString();
+            DoneText.Text = "Нет";
         }       
 
         #region Выбор темы офрмления при установки галочки
@@ -127,7 +128,7 @@ namespace WinForms_ToDoList
         #region Добавление новых данных в базу
         private void AddDataButton_Click(object sender, EventArgs e)
         {
-            DbController.AddNewData(DeadLineToDoLabel, ToDoText, ToDoDataGridView);
+            DbController.AddNewData(DeadLineToDoLabel, ToDoText, DoneText, ToDoDataGridView);
         }
         #endregion
 

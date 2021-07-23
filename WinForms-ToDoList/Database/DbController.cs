@@ -49,24 +49,25 @@ namespace WinForms_ToDoList.Database
         #endregion
 
         #region Добавление новых данных
-        public static void AddNewData(MaterialLabel label, MaterialSingleLineTextField textField, DataGridView dataGridView)
+        public static void AddNewData(MaterialLabel label, MaterialSingleLineTextField textFieldOne, MaterialSingleLineTextField textFieldTwo, DataGridView dataGridView)
         {
             try
             {
                 connection.Open();
 
-                if (textField.Text == "")
+                if (textFieldOne.Text == "" || textFieldTwo.Text == "")
                 {
-                    messageForm = new MessageForm("Вы не ввели в поле то, что необходимо сделать.", "Ошибка добавления данных", imageIconError);
+                    messageForm = new MessageForm("Вы не ввели данные в необходимые поля.", "Ошибка добавления данных", imageIconError);
                     messageForm.ShowDialog();
                 }
                 else
                 {
-                    string insertData = "INSERT INTO ToDoTable (DateCompletion, ToDo, Done) VALUES ('" + label.Text + "','" + textField.Text + "','Нет')";
+                    string insertData = "INSERT INTO ToDoTable (DateCompletion, ToDo, Done) VALUES ('" + label.Text + "','" + textFieldOne.Text + "','" + textFieldTwo.Text + "')";
                     command = new SQLiteCommand(insertData, connection);
                     command.ExecuteNonQuery();
 
-                    textField.Text = "";
+                    textFieldOne.Text = "";
+                    textFieldTwo.Text = "Нет";
                     LoadData(dataGridView);
 
                     messageForm = new MessageForm("Данные успешно сохранены.", "Добавления данных", imageIconInfo);
