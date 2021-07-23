@@ -43,7 +43,9 @@ namespace WinForms_ToDoList
             this.DeadLineToDoLabel = new MaterialSkin.Controls.MaterialLabel();
             this.DarkThemeCheckBox = new MaterialSkin.Controls.MaterialCheckBox();
             this.NewRowButton = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.UpdateDataButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.EditDataButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
+            this.DoneText = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.IdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateCompletionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ToDoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,11 +56,11 @@ namespace WinForms_ToDoList
             // AboutProgramButton
             // 
             this.AboutProgramButton.Depth = 0;
-            this.AboutProgramButton.Location = new System.Drawing.Point(558, 388);
+            this.AboutProgramButton.Location = new System.Drawing.Point(570, 444);
             this.AboutProgramButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.AboutProgramButton.Name = "AboutProgramButton";
             this.AboutProgramButton.Primary = true;
-            this.AboutProgramButton.Size = new System.Drawing.Size(131, 35);
+            this.AboutProgramButton.Size = new System.Drawing.Size(124, 35);
             this.AboutProgramButton.TabIndex = 0;
             this.AboutProgramButton.Text = "О приложении";
             this.AboutProgramButton.UseVisualStyleBackColor = true;
@@ -67,11 +69,11 @@ namespace WinForms_ToDoList
             // ExportDataButton
             // 
             this.ExportDataButton.Depth = 0;
-            this.ExportDataButton.Location = new System.Drawing.Point(452, 388);
+            this.ExportDataButton.Location = new System.Drawing.Point(471, 444);
             this.ExportDataButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ExportDataButton.Name = "ExportDataButton";
             this.ExportDataButton.Primary = true;
-            this.ExportDataButton.Size = new System.Drawing.Size(100, 35);
+            this.ExportDataButton.Size = new System.Drawing.Size(93, 35);
             this.ExportDataButton.TabIndex = 1;
             this.ExportDataButton.Text = "Экспорт";
             this.ExportDataButton.UseVisualStyleBackColor = true;
@@ -80,11 +82,11 @@ namespace WinForms_ToDoList
             // DeleteDataButton
             // 
             this.DeleteDataButton.Depth = 0;
-            this.DeleteDataButton.Location = new System.Drawing.Point(346, 388);
+            this.DeleteDataButton.Location = new System.Drawing.Point(372, 444);
             this.DeleteDataButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteDataButton.Name = "DeleteDataButton";
             this.DeleteDataButton.Primary = true;
-            this.DeleteDataButton.Size = new System.Drawing.Size(100, 35);
+            this.DeleteDataButton.Size = new System.Drawing.Size(93, 35);
             this.DeleteDataButton.TabIndex = 2;
             this.DeleteDataButton.Text = "Удалить";
             this.DeleteDataButton.UseVisualStyleBackColor = true;
@@ -94,7 +96,7 @@ namespace WinForms_ToDoList
             this.ToDoText.Depth = 0;
             this.ToDoText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ToDoText.Hint = "";
-            this.ToDoText.Location = new System.Drawing.Point(12, 132);
+            this.ToDoText.Location = new System.Drawing.Point(12, 349);
             this.ToDoText.MouseState = MaterialSkin.MouseState.HOVER;
             this.ToDoText.Name = "ToDoText";
             this.ToDoText.PasswordChar = '\0';
@@ -111,7 +113,7 @@ namespace WinForms_ToDoList
             this.materialLabel1.Depth = 0;
             this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel1.Location = new System.Drawing.Point(8, 109);
+            this.materialLabel1.Location = new System.Drawing.Point(8, 326);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
             this.materialLabel1.Size = new System.Drawing.Size(164, 19);
@@ -124,7 +126,7 @@ namespace WinForms_ToDoList
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialLabel2.Location = new System.Drawing.Point(8, 165);
+            this.materialLabel2.Location = new System.Drawing.Point(8, 104);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(142, 19);
@@ -133,7 +135,7 @@ namespace WinForms_ToDoList
             // 
             // MonthCalendar
             // 
-            this.MonthCalendar.Location = new System.Drawing.Point(8, 214);
+            this.MonthCalendar.Location = new System.Drawing.Point(12, 153);
             this.MonthCalendar.Name = "MonthCalendar";
             this.MonthCalendar.TabIndex = 6;
             this.MonthCalendar.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.MonthCalendar_DateChanged);
@@ -141,11 +143,11 @@ namespace WinForms_ToDoList
             // AddDataButton
             // 
             this.AddDataButton.Depth = 0;
-            this.AddDataButton.Location = new System.Drawing.Point(134, 388);
+            this.AddDataButton.Location = new System.Drawing.Point(134, 444);
             this.AddDataButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.AddDataButton.Name = "AddDataButton";
             this.AddDataButton.Primary = true;
-            this.AddDataButton.Size = new System.Drawing.Size(100, 35);
+            this.AddDataButton.Size = new System.Drawing.Size(93, 35);
             this.AddDataButton.TabIndex = 7;
             this.AddDataButton.Text = "Добавить";
             this.AddDataButton.UseVisualStyleBackColor = true;
@@ -164,7 +166,7 @@ namespace WinForms_ToDoList
             this.DoneColumn});
             this.ToDoDataGridView.Location = new System.Drawing.Point(184, 70);
             this.ToDoDataGridView.Name = "ToDoDataGridView";
-            this.ToDoDataGridView.Size = new System.Drawing.Size(505, 306);
+            this.ToDoDataGridView.Size = new System.Drawing.Size(510, 360);
             this.ToDoDataGridView.TabIndex = 8;
             // 
             // DeadLineToDoLabel
@@ -173,7 +175,7 @@ namespace WinForms_ToDoList
             this.DeadLineToDoLabel.Depth = 0;
             this.DeadLineToDoLabel.Font = new System.Drawing.Font("Roboto", 11F);
             this.DeadLineToDoLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.DeadLineToDoLabel.Location = new System.Drawing.Point(8, 189);
+            this.DeadLineToDoLabel.Location = new System.Drawing.Point(8, 128);
             this.DeadLineToDoLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeadLineToDoLabel.Name = "DeadLineToDoLabel";
             this.DeadLineToDoLabel.Size = new System.Drawing.Size(0, 19);
@@ -198,7 +200,7 @@ namespace WinForms_ToDoList
             // NewRowButton
             // 
             this.NewRowButton.Depth = 0;
-            this.NewRowButton.Location = new System.Drawing.Point(8, 388);
+            this.NewRowButton.Location = new System.Drawing.Point(8, 444);
             this.NewRowButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.NewRowButton.Name = "NewRowButton";
             this.NewRowButton.Primary = true;
@@ -208,17 +210,46 @@ namespace WinForms_ToDoList
             this.NewRowButton.UseVisualStyleBackColor = true;
             this.NewRowButton.Click += new System.EventHandler(this.NewRowButton_Click);
             // 
-            // UpdateDataButton
+            // EditDataButton
             // 
-            this.UpdateDataButton.Depth = 0;
-            this.UpdateDataButton.Location = new System.Drawing.Point(240, 388);
-            this.UpdateDataButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.UpdateDataButton.Name = "UpdateDataButton";
-            this.UpdateDataButton.Primary = true;
-            this.UpdateDataButton.Size = new System.Drawing.Size(100, 35);
-            this.UpdateDataButton.TabIndex = 12;
-            this.UpdateDataButton.Text = "Обновить";
-            this.UpdateDataButton.UseVisualStyleBackColor = true;
+            this.EditDataButton.Depth = 0;
+            this.EditDataButton.Location = new System.Drawing.Point(233, 444);
+            this.EditDataButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.EditDataButton.Name = "EditDataButton";
+            this.EditDataButton.Primary = true;
+            this.EditDataButton.Size = new System.Drawing.Size(133, 35);
+            this.EditDataButton.TabIndex = 12;
+            this.EditDataButton.Text = "Редактировать";
+            this.EditDataButton.UseVisualStyleBackColor = true;
+            // 
+            // materialLabel3
+            // 
+            this.materialLabel3.AutoSize = true;
+            this.materialLabel3.Depth = 0;
+            this.materialLabel3.Font = new System.Drawing.Font("Roboto", 11F);
+            this.materialLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialLabel3.Location = new System.Drawing.Point(8, 384);
+            this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabel3.Name = "materialLabel3";
+            this.materialLabel3.Size = new System.Drawing.Size(155, 19);
+            this.materialLabel3.TabIndex = 14;
+            this.materialLabel3.Text = "Выполнено (статус):";
+            // 
+            // DoneText
+            // 
+            this.DoneText.Depth = 0;
+            this.DoneText.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.DoneText.Hint = "";
+            this.DoneText.Location = new System.Drawing.Point(12, 407);
+            this.DoneText.MouseState = MaterialSkin.MouseState.HOVER;
+            this.DoneText.Name = "DoneText";
+            this.DoneText.PasswordChar = '\0';
+            this.DoneText.SelectedText = "";
+            this.DoneText.SelectionLength = 0;
+            this.DoneText.SelectionStart = 0;
+            this.DoneText.Size = new System.Drawing.Size(160, 23);
+            this.DoneText.TabIndex = 13;
+            this.DoneText.UseSystemPasswordChar = false;
             // 
             // IdColumn
             // 
@@ -236,7 +267,7 @@ namespace WinForms_ToDoList
             this.DateCompletionColumn.HeaderText = "Дата выполнения";
             this.DateCompletionColumn.Name = "DateCompletionColumn";
             this.DateCompletionColumn.ReadOnly = true;
-            this.DateCompletionColumn.Width = 130;
+            this.DateCompletionColumn.Width = 126;
             // 
             // ToDoColumn
             // 
@@ -244,7 +275,7 @@ namespace WinForms_ToDoList
             this.ToDoColumn.HeaderText = "Сделать";
             this.ToDoColumn.Name = "ToDoColumn";
             this.ToDoColumn.ReadOnly = true;
-            this.ToDoColumn.Width = 232;
+            this.ToDoColumn.Width = 246;
             // 
             // DoneColumn
             // 
@@ -252,12 +283,15 @@ namespace WinForms_ToDoList
             this.DoneColumn.HeaderText = "Выполнено";
             this.DoneColumn.Name = "DoneColumn";
             this.DoneColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DoneColumn.Width = 95;
             // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(701, 435);
-            this.Controls.Add(this.UpdateDataButton);
+            this.ClientSize = new System.Drawing.Size(701, 491);
+            this.Controls.Add(this.materialLabel3);
+            this.Controls.Add(this.DoneText);
+            this.Controls.Add(this.EditDataButton);
             this.Controls.Add(this.NewRowButton);
             this.Controls.Add(this.DarkThemeCheckBox);
             this.Controls.Add(this.DeadLineToDoLabel);
@@ -298,7 +332,9 @@ namespace WinForms_ToDoList
         private MaterialSkin.Controls.MaterialLabel DeadLineToDoLabel;
         private MaterialSkin.Controls.MaterialCheckBox DarkThemeCheckBox;
         private MaterialSkin.Controls.MaterialRaisedButton NewRowButton;
-        private MaterialSkin.Controls.MaterialRaisedButton UpdateDataButton;
+        private MaterialSkin.Controls.MaterialRaisedButton EditDataButton;
+        private MaterialSkin.Controls.MaterialLabel materialLabel3;
+        private MaterialSkin.Controls.MaterialSingleLineTextField DoneText;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateCompletionColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ToDoColumn;
