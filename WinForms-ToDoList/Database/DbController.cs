@@ -25,6 +25,7 @@ namespace WinForms_ToDoList.Database
         static MessageForm messageForm;
         static Image imageIconError = Properties.Resources.error;
         static Image imageIconInfo = Properties.Resources.info;
+        static Image imageInfoWarning = Properties.Resources.warning;
         #endregion
 
         #region Загрузка данных из базы
@@ -51,10 +52,10 @@ namespace WinForms_ToDoList.Database
         #region Добавление новых данных
         public static void AddNewData(MaterialLabel label, MaterialSingleLineTextField textFieldOne, MaterialSingleLineTextField textFieldTwo, DataGridView dataGridView)
         {
-            try
-            {
-                connection.Open();
+            connection.Open();
 
+            try
+            {             
                 if (textFieldOne.Text == "" || textFieldTwo.Text == "")
                 {
                     messageForm = new MessageForm("Вы не ввели данные в необходимые поля.", "Ошибка добавления данных", imageIconError);
@@ -72,24 +73,52 @@ namespace WinForms_ToDoList.Database
 
                     messageForm = new MessageForm("Данные успешно сохранены.", "Добавления данных", imageIconInfo);
                     messageForm.ShowDialog();
-                }
-
-                connection.Close();
+                }               
             }
             catch
             {
-                messageForm = new MessageForm("Произошла ошибки при добавлении данных.", "Ошибка добавления данных", imageIconError);
+                messageForm = new MessageForm("Произошла ошибка при добавлении данных.", "Ошибка добавления данных", imageIconError);
                 messageForm.ShowDialog();
             }
+
+            connection.Close();
         }
         #endregion
 
-        #region Обновление существующих данных
+        #region Редактирование существующих данных
 
         #endregion
 
         #region Удаление данных
+        public static void DeleteData(DataGridView dataGridView, MaterialLabel label, MaterialSingleLineTextField textFieldOne, MaterialSingleLineTextField textFieldTwo)
+        {
+            connection.Open();
 
+            foreach (DataGridViewRow row in dataGridView.SelectedRows)
+            {
+                if (dataGridView.CurrentRow.Cells[0].Value != DBNull.Value)
+                {
+                    string deleteData = "DELETE FROM ToDoList WHERE Id = '" + Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value) + "'";
+                    command = new SQLiteCommand(deleteData, connection);
+                    command.ExecuteNonQuery();
+
+                    LoadData(dataGridView);
+                    label.Text = DateTime.Now.ToShortDateString();
+                    textFieldOne.Text = "";
+                    textFieldTwo.Text = "Нет";
+
+                    messageForm = new MessageForm("Данные успешно удалены.", "Удаление данных", imageIconInfo);
+                    messageForm.ShowDialog();
+                }
+                else
+                {
+                    messageForm = new MessageForm("Удаление незаполненной строки невозможно.", "Удаление данных", imageInfoWarning);
+                    messageForm.ShowDialog();
+                }
+            }
+
+            connection.Close();
+        }
         #endregion
 
         #region Эспорт данных в Excel
