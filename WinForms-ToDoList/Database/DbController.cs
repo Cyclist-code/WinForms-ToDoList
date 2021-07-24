@@ -45,28 +45,29 @@ namespace WinForms_ToDoList.Database
         #endregion
 
         #region Добавление новых данных
-        public static void AddNewData(MaterialLabel label, MaterialSingleLineTextField textFieldOne, MaterialSingleLineTextField textFieldTwo, DataGridView dataGridView)
+        public static void AddNewData(MaterialLabel DeadLineToDoLabel, MaterialSingleLineTextField ToDoText, MaterialSingleLineTextField DoneText, DataGridView dataGridView)
         {
             connection.Open();
 
             try
             {             
-                if (textFieldOne.Text == "" || textFieldTwo.Text == "")
+                if (ToDoText.Text == "" || DoneText.Text == "")
                 {
                     messageForm = new MessageForm("Вы не ввели данные в необходимые поля.", "Ошибка добавления данных", imageIconError);
                     messageForm.ShowDialog();
                 }
                 else
                 {
-                    string insertData = "INSERT INTO ToDoTable (DateCompletion, ToDo, Done) VALUES ('" + label.Text + "','" + textFieldOne.Text + "','" + textFieldTwo.Text + "')";
+                    string insertData = "INSERT INTO ToDoTable (DateCompletion, ToDo, Done) VALUES ('" + DeadLineToDoLabel.Text + "','" + ToDoText.Text + "','" + DoneText.Text + "')";
                     command = new SQLiteCommand(insertData, connection);
                     command.ExecuteNonQuery();
 
-                    textFieldOne.Text = "";
-                    textFieldTwo.Text = "Нет";
+                    DeadLineToDoLabel.Text = DateTime.Now.ToShortDateString();
+                    ToDoText.Text = "";
+                    DoneText.Text = "Нет";
                     LoadData(dataGridView);
 
-                    messageForm = new MessageForm("Данные успешно сохранены.", "Добавления данных", imageIconInfo);
+                    messageForm = new MessageForm("Введённые данные успешно сохранены в базу данных.", "Добавления данных", imageIconInfo);
                     messageForm.ShowDialog();
                 }               
             }
@@ -81,7 +82,7 @@ namespace WinForms_ToDoList.Database
         #endregion
 
         #region Редактирование существующих данных
-        public static void EditData(DataGridView dataGridView, MaterialLabel label, MaterialSingleLineTextField textFieldOne, MaterialSingleLineTextField textFieldTwo)
+        public static void EditData(DataGridView dataGridView, MaterialLabel DeadLineToDoLabel, MaterialSingleLineTextField ToDoText, MaterialSingleLineTextField DoneText)
         {
             connection.Open();
 
@@ -89,17 +90,17 @@ namespace WinForms_ToDoList.Database
             {
                 foreach (DataGridViewRow row in dataGridView.SelectedRows)
                 {
-                    string editData = "UPDATE ToDoTable SET DateCompletion = '" + label.Text + "', ToDo = '" + textFieldOne.Text + "', Done = '" + textFieldTwo.Text + 
+                    string editData = "UPDATE ToDoTable SET DateCompletion = '" + DeadLineToDoLabel.Text + "', ToDo = '" + ToDoText.Text + "', Done = '" + DoneText.Text + 
                         "' WHERE Id = '" + Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value) + "'";
                     command = new SQLiteCommand(editData, connection);
                     command.ExecuteNonQuery();
 
-                    label.Text = DateTime.Now.ToShortDateString();
-                    textFieldOne.Text = "";
-                    textFieldTwo.Text = "Нет";
+                    DeadLineToDoLabel.Text = DateTime.Now.ToShortDateString();
+                    ToDoText.Text = "";
+                    DoneText.Text = "Нет";
                     LoadData(dataGridView);
 
-                    messageForm = new MessageForm("Данные успешно отредактированы.", "Редактирование данных", imageIconInfo);
+                    messageForm = new MessageForm("Сохранённые данные успешно отредактированы.", "Редактирование данных", imageIconInfo);
                     messageForm.ShowDialog();
                 }
             }
@@ -114,7 +115,7 @@ namespace WinForms_ToDoList.Database
         #endregion
 
         #region Удаление данных
-        public static void DeleteData(DataGridView dataGridView, MaterialLabel label, MaterialSingleLineTextField textFieldOne, MaterialSingleLineTextField textFieldTwo)
+        public static void DeleteData(DataGridView dataGridView, MaterialLabel DeadLineToDoLabel, MaterialSingleLineTextField ToDoText, MaterialSingleLineTextField DoneText)
         {
             connection.Open();
 
@@ -127,11 +128,11 @@ namespace WinForms_ToDoList.Database
                     command.ExecuteNonQuery();
 
                     LoadData(dataGridView);
-                    label.Text = DateTime.Now.ToShortDateString();
-                    textFieldOne.Text = "";
-                    textFieldTwo.Text = "Нет";
+                    DeadLineToDoLabel.Text = DateTime.Now.ToShortDateString();
+                    ToDoText.Text = "";
+                    DoneText.Text = "Нет";
 
-                    messageForm = new MessageForm("Данные успешно удалены.", "Удаление данных", imageIconInfo);
+                    messageForm = new MessageForm("Данные успешно удалены из базы данных.", "Удаление данных", imageIconInfo);
                     messageForm.ShowDialog();
                 }
                 else
