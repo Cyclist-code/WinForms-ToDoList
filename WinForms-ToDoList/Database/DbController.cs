@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing;
 using System.Data.SQLite;
 using System.Data;
 using System.Windows.Forms;
-using MaterialSkin;
 using MaterialSkin.Controls;
 using WinForms_ToDoList.Forms;
 
@@ -86,7 +81,36 @@ namespace WinForms_ToDoList.Database
         #endregion
 
         #region Редактирование существующих данных
+        public static void EditData(DataGridView dataGridView, MaterialLabel label, MaterialSingleLineTextField textFieldOne, MaterialSingleLineTextField textFieldTwo)
+        {
+            connection.Open();
 
+            try
+            {
+                foreach (DataGridViewRow row in dataGridView.SelectedRows)
+                {
+                    string editData = "UPDATE ToDoTable SET DateCompletion = '" + label.Text + "', ToDo = '" + textFieldOne.Text + "', Done = '" + textFieldTwo.Text + 
+                        "' WHERE Id = '" + Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value) + "'";
+                    command = new SQLiteCommand(editData, connection);
+                    command.ExecuteNonQuery();
+
+                    label.Text = DateTime.Now.ToShortDateString();
+                    textFieldOne.Text = "";
+                    textFieldTwo.Text = "Нет";
+                    LoadData(dataGridView);
+
+                    messageForm = new MessageForm("Данные успешно отредактированы.", "Редактирование данных", imageIconInfo);
+                    messageForm.ShowDialog();
+                }
+            }
+            catch
+            {
+                messageForm = new MessageForm("Произошла ошибка при редактировании данных.", "Ошибка редактирования данных", imageIconError);
+                messageForm.ShowDialog();
+            }            
+
+            connection.Close();
+        }
         #endregion
 
         #region Удаление данных
