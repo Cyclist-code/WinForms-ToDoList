@@ -40,16 +40,16 @@ namespace WinForms_ToDoList
             this.MonthCalendar = new System.Windows.Forms.MonthCalendar();
             this.AddDataButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.ToDoDataGridView = new System.Windows.Forms.DataGridView();
+            this.IdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateCompletionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ToDoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DoneColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeadLineToDoLabel = new MaterialSkin.Controls.MaterialLabel();
             this.DarkThemeCheckBox = new MaterialSkin.Controls.MaterialCheckBox();
             this.NewRowButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.EditDataButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.DoneText = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.IdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateCompletionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ToDoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DoneColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ToDoDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -171,6 +171,40 @@ namespace WinForms_ToDoList
             this.ToDoDataGridView.TabIndex = 8;
             this.ToDoDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ToDoDataGridView_CellClick);
             // 
+            // IdColumn
+            // 
+            this.IdColumn.DataPropertyName = "Id";
+            this.IdColumn.HeaderText = "Id";
+            this.IdColumn.Name = "IdColumn";
+            this.IdColumn.Visible = false;
+            // 
+            // DateCompletionColumn
+            // 
+            this.DateCompletionColumn.DataPropertyName = "DateCompletion";
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.DateCompletionColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.DateCompletionColumn.HeaderText = "Дата выполнения";
+            this.DateCompletionColumn.Name = "DateCompletionColumn";
+            this.DateCompletionColumn.ReadOnly = true;
+            this.DateCompletionColumn.Width = 126;
+            // 
+            // ToDoColumn
+            // 
+            this.ToDoColumn.DataPropertyName = "ToDo";
+            this.ToDoColumn.HeaderText = "Сделать";
+            this.ToDoColumn.Name = "ToDoColumn";
+            this.ToDoColumn.ReadOnly = true;
+            this.ToDoColumn.Width = 246;
+            // 
+            // DoneColumn
+            // 
+            this.DoneColumn.DataPropertyName = "Done";
+            this.DoneColumn.HeaderText = "Выполнено";
+            this.DoneColumn.Name = "DoneColumn";
+            this.DoneColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.DoneColumn.Width = 95;
+            // 
             // DeadLineToDoLabel
             // 
             this.DeadLineToDoLabel.AutoSize = true;
@@ -223,6 +257,7 @@ namespace WinForms_ToDoList
             this.EditDataButton.TabIndex = 12;
             this.EditDataButton.Text = "Редактировать";
             this.EditDataButton.UseVisualStyleBackColor = true;
+            this.EditDataButton.Click += new System.EventHandler(this.EditDataButton_Click);
             // 
             // materialLabel3
             // 
@@ -252,40 +287,6 @@ namespace WinForms_ToDoList
             this.DoneText.Size = new System.Drawing.Size(160, 23);
             this.DoneText.TabIndex = 13;
             this.DoneText.UseSystemPasswordChar = false;
-            // 
-            // IdColumn
-            // 
-            this.IdColumn.DataPropertyName = "Id";
-            this.IdColumn.HeaderText = "Id";
-            this.IdColumn.Name = "IdColumn";
-            this.IdColumn.Visible = false;
-            // 
-            // DateCompletionColumn
-            // 
-            this.DateCompletionColumn.DataPropertyName = "DateCompletion";
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.DateCompletionColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.DateCompletionColumn.HeaderText = "Дата выполнения";
-            this.DateCompletionColumn.Name = "DateCompletionColumn";
-            this.DateCompletionColumn.ReadOnly = true;
-            this.DateCompletionColumn.Width = 126;
-            // 
-            // ToDoColumn
-            // 
-            this.ToDoColumn.DataPropertyName = "ToDo";
-            this.ToDoColumn.HeaderText = "Сделать";
-            this.ToDoColumn.Name = "ToDoColumn";
-            this.ToDoColumn.ReadOnly = true;
-            this.ToDoColumn.Width = 246;
-            // 
-            // DoneColumn
-            // 
-            this.DoneColumn.DataPropertyName = "Done";
-            this.DoneColumn.HeaderText = "Выполнено";
-            this.DoneColumn.Name = "DoneColumn";
-            this.DoneColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.DoneColumn.Width = 95;
             // 
             // MainForm
             // 

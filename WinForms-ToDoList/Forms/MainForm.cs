@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SQLite;
-using System.Data;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using WinForms_ToDoList.Forms;
@@ -132,6 +131,13 @@ namespace WinForms_ToDoList
         }
         #endregion
 
+        #region Редактирование данных
+        private void EditDataButton_Click(object sender, EventArgs e)
+        {
+            DbController.EditData(ToDoDataGridView, DeadLineToDoLabel, ToDoText, DoneText);
+        }
+        #endregion
+
         #region Удаление данных
         private void DeleteDataButton_Click(object sender, EventArgs e)
         {
@@ -159,8 +165,6 @@ namespace WinForms_ToDoList
                 DoneText.Text = ToDoDataGridView.SelectedRows[0].Cells[3].Value.ToString();
             }
         }
-        #endregion
-
-        
+        #endregion       
     }
 }
