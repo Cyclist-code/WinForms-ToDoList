@@ -19,7 +19,7 @@ namespace WinForms_ToDoList.Forms
         #region Переход в профиль на GitHub
         private void ProfileGitHubButton_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/Cyclist-code");
+            Process.Start("https://github.com/Cyclist-code/WinForms-ToDoList");
         }
 
         #endregion
