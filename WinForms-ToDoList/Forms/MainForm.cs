@@ -29,13 +29,13 @@ namespace WinForms_ToDoList
             if ((theme == "") || (theme == " ") || (theme == "0"))
             {
                 materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-                materialSkinManager.ColorScheme = new ColorScheme(Primary.Green500, Primary.Green700, Primary.Green100, Accent.Green700, TextShade.WHITE);
+                materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.Blue400, TextShade.WHITE);
             }
             if (theme == "1")
             {
                 DarkThemeCheckBox.Checked = true;
                 materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-                materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue500, Primary.Blue700, Primary.Blue100, Accent.Blue400, TextShade.WHITE);
+                materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.Blue400, TextShade.WHITE);
             }
             #endregion
 
@@ -50,8 +50,7 @@ namespace WinForms_ToDoList
             {
                 //Включение тёмной темы
                 var materialSkinManager = MaterialSkinManager.Instance;
-                materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-                materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue500, Primary.Blue700, Primary.Blue100, Accent.Blue400, TextShade.WHITE);
+                materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;                
                 Properties.Settings.Default.DarkTheme = "1";
                 Properties.Settings.Default.Save();
             }
@@ -59,8 +58,7 @@ namespace WinForms_ToDoList
             {
                 //Включение дефолтной темы
                 var materialSkinManager = MaterialSkinManager.Instance;
-                materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-                materialSkinManager.ColorScheme = new ColorScheme(Primary.Green500, Primary.Green700, Primary.Green100, Accent.Green700, TextShade.WHITE);
+                materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;                
                 Properties.Settings.Default.DarkTheme = "0";
                 Properties.Settings.Default.Save();
             }
