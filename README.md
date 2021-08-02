@@ -15,4 +15,4 @@ Windows.
 - [MaterialSkin](https://github.com/IgnaceMaes/MaterialSkin)
 - [System.Data.SQLite](https://www.nuget.org/packages/System.Data.SQLite)
 ## Изображения
-![MainForm](https://user-images.githubusercontent.com/47049219/126788103-89c8a111-fa55-434c-8a11-166d6501dc2f.png)
+![Main-Form](https://user-images.githubusercontent.com/47049219/127802465-a8c11455-3e5b-4311-a49c-84a923be6846.png)
