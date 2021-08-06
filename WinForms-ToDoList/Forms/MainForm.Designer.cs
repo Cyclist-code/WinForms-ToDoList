@@ -55,7 +55,7 @@ namespace WinForms_ToDoList
             // AboutProgramButton
             // 
             this.AboutProgramButton.Depth = 0;
-            this.AboutProgramButton.Location = new System.Drawing.Point(570, 444);
+            this.AboutProgramButton.Location = new System.Drawing.Point(507, 444);
             this.AboutProgramButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.AboutProgramButton.Name = "AboutProgramButton";
             this.AboutProgramButton.Primary = true;
@@ -68,7 +68,7 @@ namespace WinForms_ToDoList
             // ExportDataButton
             // 
             this.ExportDataButton.Depth = 0;
-            this.ExportDataButton.Location = new System.Drawing.Point(471, 444);
+            this.ExportDataButton.Location = new System.Drawing.Point(408, 444);
             this.ExportDataButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ExportDataButton.Name = "ExportDataButton";
             this.ExportDataButton.Primary = true;
@@ -81,7 +81,7 @@ namespace WinForms_ToDoList
             // DeleteDataButton
             // 
             this.DeleteDataButton.Depth = 0;
-            this.DeleteDataButton.Location = new System.Drawing.Point(372, 444);
+            this.DeleteDataButton.Location = new System.Drawing.Point(309, 444);
             this.DeleteDataButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.DeleteDataButton.Name = "DeleteDataButton";
             this.DeleteDataButton.Primary = true;
@@ -143,7 +143,7 @@ namespace WinForms_ToDoList
             // AddDataButton
             // 
             this.AddDataButton.Depth = 0;
-            this.AddDataButton.Location = new System.Drawing.Point(134, 444);
+            this.AddDataButton.Location = new System.Drawing.Point(71, 444);
             this.AddDataButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.AddDataButton.Name = "AddDataButton";
             this.AddDataButton.Primary = true;
@@ -235,7 +235,7 @@ namespace WinForms_ToDoList
             // EditDataButton
             // 
             this.EditDataButton.Depth = 0;
-            this.EditDataButton.Location = new System.Drawing.Point(233, 444);
+            this.EditDataButton.Location = new System.Drawing.Point(170, 444);
             this.EditDataButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.EditDataButton.Name = "EditDataButton";
             this.EditDataButton.Primary = true;
