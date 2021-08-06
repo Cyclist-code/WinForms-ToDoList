@@ -48,7 +48,7 @@ namespace WinForms_ToDoList.Forms
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(143, 57);
             this.materialLabel2.TabIndex = 45;
-            this.materialLabel2.Text = "ToDoList App\r\nАвтор: Cyclist-code\r\nВерсия: 1.1.0821";
+            this.materialLabel2.Text = "ToDoList App\r\nАвтор: Cyclist-code\r\nВерсия: 1.2.0821";
             this.materialLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ProfileGitHubButton
