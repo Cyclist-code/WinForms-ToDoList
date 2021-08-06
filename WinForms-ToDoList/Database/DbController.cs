@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Data.SQLite;
 using System.Data;
 using System.Windows.Forms;
@@ -16,11 +15,8 @@ namespace WinForms_ToDoList.Database
         static DataTable tableToDo;
         #endregion
 
-        #region Переменные для отображения окон сообщений
+        #region Переменная для отображения окон сообщений
         static MessageForm messageForm;
-        static Image imageIconError = Properties.Resources.error;
-        static Image imageIconInfo = Properties.Resources.info;
-        static Image imageInfoWarning = Properties.Resources.warning;
         #endregion
 
         #region Загрузка данных из базы
@@ -53,7 +49,7 @@ namespace WinForms_ToDoList.Database
             {             
                 if (ToDoText.Text == "" || DoneText.Text == "")
                 {
-                    messageForm = new MessageForm("Вы не ввели данные в необходимые поля.", "Ошибка добавления данных", imageIconError);
+                    messageForm = new MessageForm("Вы не ввели данные в необходимые поля.", "Ошибка добавления данных", IconMessage.Error);
                     messageForm.ShowDialog();
                 }
                 else
@@ -67,13 +63,13 @@ namespace WinForms_ToDoList.Database
                     DoneText.Text = "Нет";
                     LoadData(dataGridView);
 
-                    messageForm = new MessageForm("Введённые данные успешно сохранены в базу данных.", "Добавления данных", imageIconInfo);
+                    messageForm = new MessageForm("Введённые данные успешно сохранены в базу данных.", "Добавления данных", IconMessage.Info);
                     messageForm.ShowDialog();
                 }               
             }
             catch
             {
-                messageForm = new MessageForm("Произошла ошибка при добавлении данных.", "Ошибка добавления данных", imageIconError);
+                messageForm = new MessageForm("Произошла ошибка при добавлении данных.", "Ошибка добавления данных", IconMessage.Error);
                 messageForm.ShowDialog();
             }
 
@@ -100,13 +96,13 @@ namespace WinForms_ToDoList.Database
                     DoneText.Text = "Нет";
                     LoadData(dataGridView);
 
-                    messageForm = new MessageForm("Сохранённые данные успешно отредактированы.", "Редактирование данных", imageIconInfo);
+                    messageForm = new MessageForm("Сохранённые данные успешно отредактированы.", "Редактирование данных", IconMessage.Info);
                     messageForm.ShowDialog();
                 }
             }
             catch
             {
-                messageForm = new MessageForm("Произошла ошибка при редактировании данных.", "Ошибка редактирования данных", imageIconError);
+                messageForm = new MessageForm("Произошла ошибка при редактировании данных.", "Ошибка редактирования данных", IconMessage.Error);
                 messageForm.ShowDialog();
             }            
 
@@ -132,12 +128,12 @@ namespace WinForms_ToDoList.Database
                     ToDoText.Text = "";
                     DoneText.Text = "Нет";
 
-                    messageForm = new MessageForm("Данные успешно удалены из базы данных.", "Удаление данных", imageIconInfo);
+                    messageForm = new MessageForm("Данные успешно удалены из базы данных.", "Удаление данных", IconMessage.Info);
                     messageForm.ShowDialog();
                 }
                 else
                 {
-                    messageForm = new MessageForm("Удаление незаполненной строки невозможно.", "Удаление данных", imageInfoWarning);
+                    messageForm = new MessageForm("Удаление незаполненной строки невозможно.", "Удаление данных", IconMessage.Warning);
                     messageForm.ShowDialog();
                 }
             }
@@ -184,7 +180,7 @@ namespace WinForms_ToDoList.Database
             }
             catch
             {
-                MessageForm messageForm = new MessageForm("Произошла ошибка при экспорте данных.", "Ошибка экспорта данных", imageIconError);
+                MessageForm messageForm = new MessageForm("Произошла ошибка при экспорте данных.", "Ошибка экспорта данных", IconMessage.Error);
                 messageForm.ShowDialog();
             }
 
@@ -200,12 +196,12 @@ namespace WinForms_ToDoList.Database
                 {
                     workbook.SaveAs(saveFileDialog.FileName, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
                         Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
-                    MessageForm messageForm = new MessageForm("Документ Excel сохранён в директории: " + Environment.NewLine + saveFileDialog.FileName + ".xlsx", "Сохранение документа Excel", imageIconInfo);
+                    MessageForm messageForm = new MessageForm("Документ Excel сохранён в директории: " + Environment.NewLine + saveFileDialog.FileName + ".xlsx", "Сохранение документа Excel", IconMessage.Info);
                     messageForm.ShowDialog();
                 }
                 catch
                 {
-                    MessageForm messageForm = new MessageForm("Произошла ошибка при сохранении файла.", "Ошибка сохранения файла", imageIconError);
+                    MessageForm messageForm = new MessageForm("Произошла ошибка при сохранении файла.", "Ошибка сохранения файла", IconMessage.Error);
                     messageForm.ShowDialog();
                 }
             }

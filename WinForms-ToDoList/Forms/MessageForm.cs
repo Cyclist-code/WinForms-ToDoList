@@ -1,13 +1,19 @@
 ﻿using System;
-using System.Drawing;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
 namespace WinForms_ToDoList.Forms
 {
-    public partial class MessageForm : MaterialForm
+    public enum IconMessage
     {
-        public MessageForm(string message, string caption, Image image)
+        Error,
+        Info,
+        Warning
+    }
+
+    public partial class MessageForm : MaterialForm
+    {      
+        public MessageForm(string message, string caption, IconMessage icon)
         {
             InitializeComponent();
 
@@ -16,7 +22,22 @@ namespace WinForms_ToDoList.Forms
 
             MessageLabel.Text = message;
             this.Text = caption;
-            PictureBoxIcon.Image = image;
+
+            switch (icon)
+            {
+                case IconMessage.Error:
+                    PictureBoxIcon.Image = Properties.Resources.error;
+                    break;
+
+                case IconMessage.Info:
+                    PictureBoxIcon.Image = Properties.Resources.info;
+                    break;
+
+                case IconMessage.Warning:
+                    PictureBoxIcon.Image = Properties.Resources.warning;
+                    break;
+
+            }
         }
 
         #region Закрытие окна сообщения
