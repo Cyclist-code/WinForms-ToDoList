@@ -115,13 +115,6 @@ namespace WinForms_ToDoList
 
         #region Обработчики событий
 
-        #region Добавление новой строки
-        private void NewRowButton_Click(object sender, EventArgs e)
-        {
-            DbController.AddNewRow();
-        }
-        #endregion
-
         #region Добавление новых данных в базу
         private void AddDataButton_Click(object sender, EventArgs e)
         {

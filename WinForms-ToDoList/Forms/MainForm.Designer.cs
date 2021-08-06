@@ -46,7 +46,6 @@ namespace WinForms_ToDoList
             this.DoneColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DeadLineToDoLabel = new MaterialSkin.Controls.MaterialLabel();
             this.DarkThemeCheckBox = new MaterialSkin.Controls.MaterialCheckBox();
-            this.NewRowButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.EditDataButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.DoneText = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -233,19 +232,6 @@ namespace WinForms_ToDoList
             this.DarkThemeCheckBox.UseVisualStyleBackColor = true;
             this.DarkThemeCheckBox.CheckedChanged += new System.EventHandler(this.DarkThemeCheckBox_CheckedChanged);
             // 
-            // NewRowButton
-            // 
-            this.NewRowButton.Depth = 0;
-            this.NewRowButton.Location = new System.Drawing.Point(8, 444);
-            this.NewRowButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.NewRowButton.Name = "NewRowButton";
-            this.NewRowButton.Primary = true;
-            this.NewRowButton.Size = new System.Drawing.Size(120, 35);
-            this.NewRowButton.TabIndex = 11;
-            this.NewRowButton.Text = "Новая строка";
-            this.NewRowButton.UseVisualStyleBackColor = true;
-            this.NewRowButton.Click += new System.EventHandler(this.NewRowButton_Click);
-            // 
             // EditDataButton
             // 
             this.EditDataButton.Depth = 0;
@@ -295,7 +281,6 @@ namespace WinForms_ToDoList
             this.Controls.Add(this.materialLabel3);
             this.Controls.Add(this.DoneText);
             this.Controls.Add(this.EditDataButton);
-            this.Controls.Add(this.NewRowButton);
             this.Controls.Add(this.DarkThemeCheckBox);
             this.Controls.Add(this.DeadLineToDoLabel);
             this.Controls.Add(this.ToDoDataGridView);
@@ -334,7 +319,6 @@ namespace WinForms_ToDoList
         private System.Windows.Forms.DataGridView ToDoDataGridView;
         private MaterialSkin.Controls.MaterialLabel DeadLineToDoLabel;
         private MaterialSkin.Controls.MaterialCheckBox DarkThemeCheckBox;
-        private MaterialSkin.Controls.MaterialRaisedButton NewRowButton;
         private MaterialSkin.Controls.MaterialRaisedButton EditDataButton;
         private MaterialSkin.Controls.MaterialLabel materialLabel3;
         private MaterialSkin.Controls.MaterialSingleLineTextField DoneText;
