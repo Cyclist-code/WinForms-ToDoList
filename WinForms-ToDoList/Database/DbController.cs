@@ -32,21 +32,13 @@ namespace WinForms_ToDoList.Database
         }
         #endregion
 
-        #region Добавление новой строки в DataGridView
-        public static void AddNewRow()
-        {
-            DataRow newRow = tableToDo.NewRow();
-            tableToDo.Rows.Add(newRow);
-        }
-        #endregion
-
         #region Добавление новых данных
         public static void AddNewData(MaterialLabel DeadLineToDoLabel, MaterialSingleLineTextField ToDoText, MaterialSingleLineTextField DoneText, DataGridView dataGridView)
         {
             connection.Open();
 
             try
-            {             
+            {
                 if (ToDoText.Text == "" || DoneText.Text == "")
                 {
                     messageForm = new MessageForm("Вы не ввели данные в необходимые поля.", "Ошибка добавления данных", IconMessage.Error);
@@ -65,7 +57,7 @@ namespace WinForms_ToDoList.Database
 
                     messageForm = new MessageForm("Введённые данные успешно сохранены в базу данных.", "Добавления данных", IconMessage.Info);
                     messageForm.ShowDialog();
-                }               
+                }
             }
             catch
             {
@@ -86,7 +78,7 @@ namespace WinForms_ToDoList.Database
             {
                 foreach (DataGridViewRow row in dataGridView.SelectedRows)
                 {
-                    string editData = "UPDATE ToDoTable SET DateCompletion = '" + DeadLineToDoLabel.Text + "', ToDo = '" + ToDoText.Text + "', Done = '" + DoneText.Text + 
+                    string editData = "UPDATE ToDoTable SET DateCompletion = '" + DeadLineToDoLabel.Text + "', ToDo = '" + ToDoText.Text + "', Done = '" + DoneText.Text +
                         "' WHERE Id = '" + Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value) + "'";
                     command = new SQLiteCommand(editData, connection);
                     command.ExecuteNonQuery();
@@ -104,7 +96,7 @@ namespace WinForms_ToDoList.Database
             {
                 messageForm = new MessageForm("Произошла ошибка при редактировании данных.", "Ошибка редактирования данных", IconMessage.Error);
                 messageForm.ShowDialog();
-            }            
+            }
 
             connection.Close();
         }
@@ -117,25 +109,17 @@ namespace WinForms_ToDoList.Database
 
             foreach (DataGridViewRow row in dataGridView.SelectedRows)
             {
-                if (dataGridView.CurrentRow.Cells[0].Value != DBNull.Value)
-                {
-                    string deleteData = "DELETE FROM ToDoTable WHERE Id = '" + Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value) + "'";
-                    command = new SQLiteCommand(deleteData, connection);
-                    command.ExecuteNonQuery();
+                string deleteData = "DELETE FROM ToDoTable WHERE Id = '" + Convert.ToInt32(dataGridView.CurrentRow.Cells[0].Value) + "'";
+                command = new SQLiteCommand(deleteData, connection);
+                command.ExecuteNonQuery();
 
-                    LoadData(dataGridView);
-                    DeadLineToDoLabel.Text = DateTime.Now.ToShortDateString();
-                    ToDoText.Text = "";
-                    DoneText.Text = "Нет";
+                LoadData(dataGridView);
+                DeadLineToDoLabel.Text = DateTime.Now.ToShortDateString();
+                ToDoText.Text = "";
+                DoneText.Text = "Нет";
 
-                    messageForm = new MessageForm("Данные успешно удалены из базы данных.", "Удаление данных", IconMessage.Info);
-                    messageForm.ShowDialog();
-                }
-                else
-                {
-                    messageForm = new MessageForm("Удаление незаполненной строки невозможно.", "Удаление данных", IconMessage.Warning);
-                    messageForm.ShowDialog();
-                }
+                messageForm = new MessageForm("Данные успешно удалены из базы данных.", "Удаление данных", IconMessage.Info);
+                messageForm.ShowDialog();
             }
 
             connection.Close();
