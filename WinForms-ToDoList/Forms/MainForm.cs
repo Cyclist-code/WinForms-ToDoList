@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data.SQLite;
-using MaterialSkin;
 using MaterialSkin.Controls;
 using WinForms_ToDoList.Forms;
 using WinForms_ToDoList.Database;
+using WinForms_ToDoList.Services;
 
 namespace WinForms_ToDoList
 {
     public partial class MainForm : MaterialForm
     {
         #region Глобальные переменные
-        string theme;
         int openForm = 0;
         AboutForm aboutForm;
 
@@ -22,22 +21,8 @@ namespace WinForms_ToDoList
         {
             InitializeComponent();
 
-            #region Дефолтная тема
-            var materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            theme = Properties.Settings.Default.DarkTheme;
-            if ((theme == "") || (theme == " ") || (theme == "0"))
-            {
-                materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-                materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.Blue400, TextShade.WHITE);
-            }
-            if (theme == "1")
-            {
-                DarkThemeCheckBox.Checked = true;
-                materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-                materialSkinManager.ColorScheme = new ColorScheme(Primary.Blue800, Primary.Blue900, Primary.Blue500, Accent.Blue400, TextShade.WHITE);
-            }
-            #endregion
+            //Дефолтная тема
+            FormSettings.InstallingDefaultTheme(this, DarkThemeCheckBox);
 
             DeadLineToDoLabel.Text = DateTime.Now.ToShortDateString();
             DoneText.Text = "Нет";
@@ -46,22 +31,7 @@ namespace WinForms_ToDoList
         #region Выбор темы офрмления при установки галочки
         private void DarkThemeCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (DarkThemeCheckBox.Checked)
-            {
-                //Включение тёмной темы
-                var materialSkinManager = MaterialSkinManager.Instance;
-                materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;                
-                Properties.Settings.Default.DarkTheme = "1";
-                Properties.Settings.Default.Save();
-            }
-            if (!DarkThemeCheckBox.Checked)
-            {
-                //Включение дефолтной темы
-                var materialSkinManager = MaterialSkinManager.Instance;
-                materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;                
-                Properties.Settings.Default.DarkTheme = "0";
-                Properties.Settings.Default.Save();
-            }
+            FormSettings.ChoosingAppTheme(DarkThemeCheckBox);
         }
         #endregion
 
