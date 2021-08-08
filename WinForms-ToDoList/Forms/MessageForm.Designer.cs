@@ -57,7 +57,7 @@ namespace WinForms_ToDoList.Forms
             this.MessageLabel.Location = new System.Drawing.Point(68, 74);
             this.MessageLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.MessageLabel.Name = "MessageLabel";
-            this.MessageLabel.Size = new System.Drawing.Size(302, 40);
+            this.MessageLabel.Size = new System.Drawing.Size(301, 40);
             this.MessageLabel.TabIndex = 5;
             // 
             // PictureBoxIcon

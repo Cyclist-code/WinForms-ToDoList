@@ -66,12 +66,12 @@ namespace WinForms_ToDoList.Forms
             // materialLabel1
             // 
             this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 11F);
             this.materialLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialLabel1.Location = new System.Drawing.Point(68, 74);
             this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(282, 40);
+            this.materialLabel1.Size = new System.Drawing.Size(281, 40);
             this.materialLabel1.TabIndex = 4;
             this.materialLabel1.Text = "Вы действительно хотите выйти из приложения?";
             // 
